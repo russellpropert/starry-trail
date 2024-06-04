@@ -13,7 +13,7 @@ Fork the repository, clone it to your machine, and drag the index.html file into
 - Calculating intermediate vectors for when the mouse movement is too fast for the setTimeout interval to light up all boxes within the mouse path.
 
 ## MIT License
-Copyright (c) 2021 Russell Propert
+Copyright (c) 2024 Russell Propert
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
