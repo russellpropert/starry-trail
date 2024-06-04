@@ -4,7 +4,7 @@
 This project is screen art. The boxes on the screen will react when the mouse pointer is moved over them. Right now, there is no mobile functionality for touchscreen. As the mouse pointer moves near the boxes, they will light up. As the mouse pointer moves away, the boxes will slowly fade, leaving a trail behind them.
 
 ## How To Run
-Fork the repository, clone it to your machine, and drag the index.html file into your browser window.
+Fork the repository, clone it to your machine, and drag the index.html file into your browser window. You can also see the project [here](https://starry-trail.vercel.app/), published through Vercel.
 
 ## Future Improvements
 - Touchscreen functionality.
