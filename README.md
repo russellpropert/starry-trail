@@ -1,14 +1,15 @@
 # Starry Trail
 
 ## Description
-This project is screen art. The boxes on the screen will react when a mouse pointer is moved over them. Right now, there is no mobile functionality for touch screen. As the mouse pointer moves near or over the boxes, they will light up. As the mouse pointer moves away, the boxes will slowly fade, leaving a trail behind them.
+This project is screen art. The boxes on the screen will react when the mouse pointer is moved over them. Right now, there is no mobile functionality for touchscreen. As the mouse pointer moves near the boxes, they will light up. As the mouse pointer moves away, the boxes will slowly fade, leaving a trail behind them.
+
 ## How To Run
 Fork the repository, clone it to your machine, and drag the index.html file into your browser window.
 
 ## Future Improvements
 - Touchscreen functionality.
 - Dynamic box sizing for different sized screens.
-- Dynamic box lighting speed to adjust for faster mouse movements.
+- Dynamic box lighting speed adjusted by faster or slower mouse movements.
 - Calculating intermediate vectors for when the mouse movement is too fast for the setTimeout interval to light up all boxes within the mouse path.
 
 ## MIT License
