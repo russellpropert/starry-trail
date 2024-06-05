@@ -12,13 +12,13 @@ body {
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   background-color: black;
 }
 
 :root {
   --viewHypotenuse: calc(100vmax * 1.5);
-  --borderWidth: calc(100vmin / 10)
+  --borderWidth: calc(min(100vw, 100dvh) / 10)
 }
 
 @keyframes backgroundSpinner1 {
