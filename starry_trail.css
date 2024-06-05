@@ -1,18 +1,23 @@
 body {
   margin: 0;
+  padding: 0;
+}
+
+.backgroundContainer {
+  position: fixed;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100vw;
   height: 100vh;
   background-color: black;
-  overflow: hidden;
 }
 
-@property --viewHypotenuse {
-  syntax: "<length>";
-  inherits: false;
-  /* initial-value: calc(sqrt(pow(100vmax, 2) * 2) * 1px); */
-  initial-value: calc(max(100vw, 100vh) * 1.5);
+:root {
+  --viewHypotenuse: calc(100vmax * 1.5);
 }
 
 @keyframes backgroundSpinner1 {
@@ -28,8 +33,6 @@ body {
   position: absolute;
   width: var(--viewHypotenuse);
   height: var(--viewHypotenuse);
-  /* width: 1000px;
-  height: 1000px; */
   background: linear-gradient(rgba(0,0,0,0) 20%, rgba(0,0,255,.7), rgba(0,0,0,0) 80%);
   animation: backgroundSpinner1;
   animation-iteration-count: infinite;
@@ -50,13 +53,11 @@ body {
   position: absolute;
   width: var(--viewHypotenuse);
   height: var(--viewHypotenuse);
-  /* width: 1000px;
-  height: 1000px; */
   background: linear-gradient(rgba(0,0,0,0) 30%, rgba(255,255,255,.2), rgba(0,0,0,0) 70%);
   animation: backgroundSpinner2;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-  animation-duration: 1200s;
+  animation-duration: 350s;
 }
 
 .container {
@@ -75,8 +76,6 @@ body {
   justify-content: center;
   align-items: center;
   background: rgba(0,0,0,0);
-
-  /* outline: solid rgba(255, 255, 255, .5) 1px; */
 }
 
 .box {
