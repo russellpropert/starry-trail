@@ -64,7 +64,7 @@ body {
 .container {
   position: absolute;
   width: calc(100vw - min(var(--borderWidth), 100px));
-  height: calc(100vh - min(var(--borderWidth), 100px));
+  height: calc(100dvh - min(var(--borderWidth), 100px));
   background: black;
   border: solid white 1px;
   overflow: hidden;
