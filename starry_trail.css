@@ -18,6 +18,7 @@ body {
 
 :root {
   --viewHypotenuse: calc(100vmax * 1.5);
+  --borderWidth: calc(100vmin / 10)
 }
 
 @keyframes backgroundSpinner1 {
@@ -62,8 +63,8 @@ body {
 
 .container {
   position: absolute;
-  width: calc(100vw - 100px);
-  height: calc(100vh - 100px);
+  width: calc(100vw - min(var(--borderWidth), 100px));
+  height: calc(100vh - min(var(--borderWidth), 100px));
   background: black;
   border: solid white 1px;
   overflow: hidden;
