@@ -11,8 +11,6 @@ let xMouseCoordinateOld;
 let yMouseCoordinateOld;
 
 window.document.onmousemove = (event) => {
-  xMouseCoordinateOld = xMouseCoordinate;
-  yMouseCoordinateOld = yMouseCoordinate;
   xMouseCoordinate = event.pageX;
   yMouseCoordinate = event.pageY;
 }
@@ -26,9 +24,11 @@ const isOver = (boxContainer) => {
   return(xMouseCoordinate > left && xMouseCoordinate < right && yMouseCoordinate > top && yMouseCoordinate < bottom);
 }
 
-const increaseOpacity = (boxContainer, opacity) => {
-  opacity += opacityIncreaseChange
-  if (opacity > 1) opacity = 1
+const increaseOpacity = (boxContainer, opacity, mouseTravel) => {
+  let opacityIncreaseChangeAdjustedForMouseTravel;
+  mouseTravel < 20 ? opacityIncreaseChangeAdjustedForMouseTravel = Math.ceil(mouseTravel / 2) * opacityIncreaseChange : opacityIncreaseChangeAdjustedForMouseTravel = 1;
+  opacity += opacityIncreaseChangeAdjustedForMouseTravel;
+  if (opacity > 1) opacity = 1;
   boxContainer.style.opacity = opacity;
 }
 
@@ -70,16 +70,27 @@ for (let i = 0; i < numberOfBoxes; i++) {
 }
 
 const checkMouseOver = () => {
+  let mouseTravel;
+
+  if (xMouseCoordinateOld && yMouseCoordinateOld) {
+    let x = xMouseCoordinate - xMouseCoordinateOld;
+    let y = yMouseCoordinate - yMouseCoordinateOld;
+    mouseTravel = Math.round(Math.sqrt(x ** 2 + y ** 2));
+  }
+
   boxContainers.forEach(
     (boxContainer) => {
       const opacity = parseFloat(boxContainer.style.opacity);
-      if (isOver(boxContainer) && opacity < 1) {
-        increaseOpacity(boxContainer, opacity);
-      } else if (!isOver(boxContainer) && opacity > originalOpacity) {
+      if (isOver(boxContainer) && opacity < 1 && xMouseCoordinate !== xMouseCoordinateOld && yMouseCoordinate !== yMouseCoordinateOld) {
+        increaseOpacity(boxContainer, opacity, mouseTravel);
+      } else if (!isOver(boxContainer) && opacity > originalOpacity || xMouseCoordinate === xMouseCoordinateOld && yMouseCoordinate === yMouseCoordinateOld) {
         decreaseOpacity(boxContainer, opacity);
       }
     }
   );
+
+  xMouseCoordinateOld = xMouseCoordinate;
+  yMouseCoordinateOld = yMouseCoordinate;
 }
 
 setInterval(checkMouseOver, 20);
