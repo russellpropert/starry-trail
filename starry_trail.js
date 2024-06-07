@@ -15,6 +15,16 @@ window.document.onmousemove = (event) => {
   yMouseCoordinate = event.pageY;
 }
 
+document.addEventListener('touchmove', (event) => {
+  event.preventDefault();
+  xMouseCoordinate = event.pageX;
+  yMouseCoordinate = event.pageY;
+});
+
+document.addEventListener('scroll', (event) => {
+  event.preventDefault();
+});
+
 const isOver = (boxContainer) => {
   const left = boxContainer.offsetLeft + container.offsetLeft;
   const right = left + boxContainer.clientWidth;
