@@ -1,4 +1,7 @@
-const numberOfBoxes = Math.ceil(window.innerWidth * window.innerHeight / 1500);
+// const numberOfBoxes = Math.ceil(window.innerWidth * window.innerHeight / 1500);
+const numberOfBoxes = 1500
+const boxDimensionScale = Math.ceil(window.innerWidth * window.innerHeight / 200000);
+const boxContainerDimentions = boxDimensionScale * 10;
 const originalOpacity = .1;
 const opacityIncreaseChange = .1;
 const opacityDecreaseChange = .005;
@@ -55,11 +58,10 @@ const makeBoxAndContainer = () => {
   box.classList.add('box');
   boxContainer.appendChild(box);
   
-  const boxDimensions = Math.floor(Math.random() * 21) + 10;
+  const boxDimensions = Math.floor(Math.random() * (boxDimensionScale * 2 + 1)) + boxDimensionScale;
   const hypotenuse = Math.ceil(Math.sqrt(boxDimensions ** 2 * 2));
   const containerWidth = container.clientWidth - hypotenuse;
   const containerHeight = container.clientHeight - hypotenuse;
-  const boxContainerDimentions = 100
 
   boxContainer.style.width = `${boxContainerDimentions}px`;
   boxContainer.style.height = `${boxContainerDimentions}px`;
