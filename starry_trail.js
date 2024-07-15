@@ -19,6 +19,7 @@ window.document.onmousemove = (event) => {
 }
 
 document.addEventListener('touchmove', (event) => {
+  event.preventDefault();
   xMouseCoordinate = event.pageX;
   yMouseCoordinate = event.pageY;
 });
