@@ -23,9 +23,9 @@ document.addEventListener('touchmove', (event) => {
   yMouseCoordinate = event.pageY;
 });
 
-// document.addEventListener('scroll', (event) => {
-//   event.preventDefault();
-// });
+document.addEventListener('scroll', (event) => {
+  event.preventDefault();
+});
 
 const isOver = (boxContainer) => {
   const left = boxContainer.offsetLeft + container.offsetLeft;
