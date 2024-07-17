@@ -19,8 +19,8 @@ window.document.onmousemove = (event) => {
 }
 
 document.addEventListener('touchmove', (event) => {
-  xCoordinate = event.pageX;
-  yCoordinate = event.pageY;
+  xCoordinate = event.changedTouches[0].pageX;
+  yCoordinate = event.changedTouches[0].pageY;
 });
 
 const isOver = (boxContainer) => {
