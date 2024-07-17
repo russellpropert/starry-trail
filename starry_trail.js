@@ -8,20 +8,20 @@ const opacityDecreaseChange = .005;
 const boxContainers = [];
 const container = document.getElementById('container');
 const eventListener = document.getElementById('eventListener');
-let xMouseCoordinate;
-let yMouseCoordinate;
-let xMouseCoordinateOld;
-let yMouseCoordinateOld;
+let xCoordinate;
+let yCoordinate;
+let xCoordinateOld;
+let yCoordinateOld;
 
 window.document.onmousemove = (event) => {
-  xMouseCoordinate = event.pageX;
-  yMouseCoordinate = event.pageY;
+  xCoordinate = event.pageX;
+  yCoordinate = event.pageY;
 }
 
 document.addEventListener('touchmove', (event) => {
   event.preventDefault();
-  xMouseCoordinate = event.pageX;
-  yMouseCoordinate = event.pageY;
+  xCoordinate = event.pageX;
+  yCoordinate = event.pageY;
 });
 
 document.addEventListener('scroll', (event) => {
@@ -34,7 +34,7 @@ const isOver = (boxContainer) => {
   const top = boxContainer.offsetTop + container.offsetTop;
   const bottom = top + boxContainer.clientHeight;
 
-  return(xMouseCoordinate > left && xMouseCoordinate < right && yMouseCoordinate > top && yMouseCoordinate < bottom);
+  return(xCoordinate > left && xCoordinate < right && yCoordinate > top && yCoordinate < bottom);
 }
 
 const increaseOpacity = (boxContainer, opacity, mouseTravel) => {
@@ -85,25 +85,33 @@ for (let i = 0; i < numberOfBoxes; i++) {
 const checkMouseOver = () => {
   let mouseTravel;
 
-  if (xMouseCoordinateOld && yMouseCoordinateOld) {
-    let x = xMouseCoordinate - xMouseCoordinateOld;
-    let y = yMouseCoordinate - yMouseCoordinateOld;
+  if (xCoordinateOld && yCoordinateOld) {
+    let x = xCoordinate - xCoordinateOld;
+    let y = yCoordinate - yCoordinateOld;
     mouseTravel = Math.round(Math.sqrt(x ** 2 + y ** 2));
   }
 
   boxContainers.forEach(
     (boxContainer) => {
       const opacity = parseFloat(boxContainer.style.opacity);
-      if (isOver(boxContainer) && opacity < 1 && xMouseCoordinate !== xMouseCoordinateOld && yMouseCoordinate !== yMouseCoordinateOld) {
+      if (isOver(boxContainer) && opacity < 1 && xCoordinate !== xCoordinateOld && yCoordinate !== yCoordinateOld) {
         increaseOpacity(boxContainer, opacity, mouseTravel);
-      } else if (!isOver(boxContainer) && opacity > originalOpacity || xMouseCoordinate === xMouseCoordinateOld && yMouseCoordinate === yMouseCoordinateOld) {
+      } else if (!isOver(boxContainer) && opacity > originalOpacity || xCoordinate === xCoordinateOld && yCoordinate === yCoordinateOld) {
         decreaseOpacity(boxContainer, opacity);
       }
     }
   );
 
-  xMouseCoordinateOld = xMouseCoordinate;
-  yMouseCoordinateOld = yMouseCoordinate;
+  let displayXCoordinate = document.getElementById('displayXCoordinate');
+  let displayYCoordinate = document.getElementById('displayYCoordinate');
+
+  // console.log(displayXCoordinate);
+
+  displayXCoordinate.textContent = `X: ${xCoordinate}`;
+  displayYCoordinate.textContent = `Y: ${yCoordinate}`;
+
+  xCoordinateOld = xCoordinate;
+  yCoordinateOld = yCoordinate;
 }
 
 setInterval(checkMouseOver, 20);
