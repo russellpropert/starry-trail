@@ -1,3 +1,7 @@
+html, body {
+  touch-action: none;
+}
+
 body {
   position: fixed;
   margin: 0;
