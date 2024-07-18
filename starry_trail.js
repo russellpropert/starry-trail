@@ -29,7 +29,7 @@ document.addEventListener('touchmove', (event) => {
 });
 
 document.addEventListener('wheel', (event) => {
-  preventDefault();
+  event.preventDefault();
 })
 
 const isOver = (boxContainer) => {
