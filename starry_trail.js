@@ -1,3 +1,4 @@
+const version = '1.18';
 const numberOfBoxes = Math.ceil(window.innerWidth * window.innerHeight / 1500);
 // const boxDimensionScale = Math.min(window.innerWidth, window.innerHeight) / 100;
 const boxContainerDimentions = 100;
@@ -10,8 +11,6 @@ const container = document.getElementById('container');
 const eventListener = document.getElementById('eventListener');
 let xCoordinate;
 let yCoordinate;
-let xCoordinate2;
-let yCoordinate2;
 let xCoordinateOld;
 let yCoordinateOld;
 
@@ -24,8 +23,6 @@ document.addEventListener('touchmove', (event) => {
   event.preventDefault();
   xCoordinate = Math.round(event.changedTouches[0].pageX);
   yCoordinate = Math.round(event.changedTouches[0].pageY);
-  xCoordinate2 = Math.round(event.changedTouches[1].pageX);
-  yCoordinate2 = Math.round(event.changedTouches[1].pageY);
 });
 
 const isOver = (boxContainer) => {
@@ -102,17 +99,13 @@ const checkMouseOver = () => {
     }
   );
 
+  // This is for diagnotics. It displays the version and touch coordiantes on screen.
+  let displayVersion = document.getElementById('version');
   let displayXCoordinate1 = document.getElementById('displayXCoordinate1');
   let displayYCoordinate1 = document.getElementById('displayYCoordinate1');
-  let displayXCoordinate2 = document.getElementById('displayXCoordinate2');
-  let displayYCoordinate2 = document.getElementById('displayYCoordinate2');
-
-  // console.log(displayXCoordinate);
-
+  displayVersion.textContent = version;
   displayXCoordinate1.textContent = `X: ${xCoordinate}`;
   displayYCoordinate1.textContent = `Y: ${yCoordinate}`;
-  displayXCoordinate2.textContent = `X: ${xCoordinate2}`;
-  displayYCoordinate2.textContent = `Y: ${yCoordinate2}`;
 
   xCoordinateOld = xCoordinate;
   yCoordinateOld = yCoordinate;
