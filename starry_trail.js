@@ -28,6 +28,10 @@ document.addEventListener('touchmove', (event) => {
   yCoordinate2 = Math.round(event.changedTouches[1].pageY);
 });
 
+document.addEventListener('wheel', (event) => {
+  preventDefault();
+})
+
 const isOver = (boxContainer) => {
   const left = boxContainer.offsetLeft + container.offsetLeft;
   const right = left + boxContainer.clientWidth;
