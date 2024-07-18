@@ -111,8 +111,8 @@ const checkMouseOver = () => {
 
   displayXCoordinate1.textContent = `X: ${xCoordinate}`;
   displayYCoordinate1.textContent = `Y: ${yCoordinate}`;
-  displayXCoordinate2.textContent = `X: ${xCoordinate}`;
-  displayYCoordinate2.textContent = `Y: ${yCoordinate}`;
+  displayXCoordinate2.textContent = `X: ${xCoordinate2}`;
+  displayYCoordinate2.textContent = `Y: ${yCoordinate2}`;
 
   xCoordinateOld = xCoordinate;
   yCoordinateOld = yCoordinate;
