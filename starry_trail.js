@@ -12,8 +12,6 @@ let xCoordinate;
 let yCoordinate;
 let xCoordinate2;
 let yCoordinate2;
-let xCoordinate3;
-let yCoordinate3;
 let xCoordinateOld;
 let yCoordinateOld;
 
@@ -28,8 +26,6 @@ document.addEventListener('touchmove', (event) => {
   yCoordinate = Math.round(event.changedTouches[0].pageY);
   xCoordinate2 = Math.round(event.changedTouches[1].pageX);
   yCoordinate2 = Math.round(event.changedTouches[1].pageY);
-  xCoordinate3 = Math.round(event.changedTouches[2].pageX);
-  yCoordinate3 = Math.round(event.changedTouches[2].pageY);
 });
 
 const isOver = (boxContainer) => {
@@ -110,8 +106,6 @@ const checkMouseOver = () => {
   let displayYCoordinate1 = document.getElementById('displayYCoordinate1');
   let displayXCoordinate2 = document.getElementById('displayXCoordinate2');
   let displayYCoordinate2 = document.getElementById('displayYCoordinate2');
-  let displayXCoordinate3 = document.getElementById('displayXCoordinate3');
-  let displayYCoordinate3 = document.getElementById('displayYCoordinate3');
 
   // console.log(displayXCoordinate);
 
@@ -119,8 +113,6 @@ const checkMouseOver = () => {
   displayYCoordinate1.textContent = `Y: ${yCoordinate}`;
   displayXCoordinate2.textContent = `X: ${xCoordinate2}`;
   displayYCoordinate2.textContent = `Y: ${yCoordinate2}`;
-  displayXCoordinate3.textContent = `X: ${xCoordinate3}`;
-  displayYCoordinate3.textContent = `Y: ${yCoordinate3}`;
 
   xCoordinateOld = xCoordinate;
   yCoordinateOld = yCoordinate;
