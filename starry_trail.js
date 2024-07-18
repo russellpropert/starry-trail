@@ -1,4 +1,4 @@
-const version = '1.18';
+const version = '1.19';
 const numberOfBoxes = Math.ceil(window.innerWidth * window.innerHeight / 1500);
 // const boxDimensionScale = Math.min(window.innerWidth, window.innerHeight) / 100;
 const boxContainerDimentions = 100;
@@ -103,7 +103,7 @@ const checkMouseOver = () => {
   let displayVersion = document.getElementById('version');
   let displayXCoordinate1 = document.getElementById('displayXCoordinate1');
   let displayYCoordinate1 = document.getElementById('displayYCoordinate1');
-  displayVersion.textContent = version;
+  displayVersion.textContent = `Version: ${version}`;
   displayXCoordinate1.textContent = `X: ${xCoordinate}`;
   displayYCoordinate1.textContent = `Y: ${yCoordinate}`;
 
