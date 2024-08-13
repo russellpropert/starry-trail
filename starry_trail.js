@@ -14,7 +14,7 @@ let yCoordinate;
 let xCoordinateOld;
 let yCoordinateOld;
 
-window.document.onmousemove = (event) => {
+document.onmousemove = (event) => {
   xCoordinate = event.pageX;
   yCoordinate = event.pageY;
 }
