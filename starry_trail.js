@@ -100,12 +100,12 @@ const checkMouseOver = () => {
   );
 
   // This is for diagnotics. It displays the version and touch coordiantes on screen.
-  let displayVersion = document.getElementById('version');
-  let displayXCoordinate1 = document.getElementById('displayXCoordinate1');
-  let displayYCoordinate1 = document.getElementById('displayYCoordinate1');
-  displayVersion.textContent = `Version: ${version}`;
-  displayXCoordinate1.textContent = `X: ${xCoordinate}`;
-  displayYCoordinate1.textContent = `Y: ${yCoordinate}`;
+  // let displayVersion = document.getElementById('version');
+  // let displayXCoordinate1 = document.getElementById('displayXCoordinate1');
+  // let displayYCoordinate1 = document.getElementById('displayYCoordinate1');
+  // displayVersion.textContent = `Version: ${version}`;
+  // displayXCoordinate1.textContent = `X: ${xCoordinate}`;
+  // displayYCoordinate1.textContent = `Y: ${yCoordinate}`;
 
   xCoordinateOld = xCoordinate;
   yCoordinateOld = yCoordinate;
