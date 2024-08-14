@@ -19,8 +19,11 @@ document.onmousemove = (event) => {
   yCoordinate = event.pageY;
 }
 
-document.addEventListener('touchmove', (event) => {
+document.addEventListener('touchstart', (event) => {
   event.preventDefault();
+})
+
+document.addEventListener('touchmove', (event) => {
   xCoordinate = Math.round(event.changedTouches[0].pageX);
   yCoordinate = Math.round(event.changedTouches[0].pageY);
 });
